@@ -54,7 +54,7 @@ function Login() {
      console.log("Hello"); //test console log
 
      try {
-       const response = await fetch('http://localhost:8081/login', { // will send data to the login endpoint
+       const response = await fetch('https://capstone2-bofa-backend.vercel.app/login', { // will send data to the login endpoint
          method: 'POST', //establishing it is a POST request
          headers: {
            'Content-Type': 'application/json', //stating the content that will be pushed will be in JSON
@@ -72,6 +72,8 @@ function Login() {
  
        const responseData = await response.json();
        
+       console.log('Response Data:', responseData); // Log to check response structure
+               
        // Reset the form fields after the log in page has been completed
        setFormData({
          email: '',
@@ -79,8 +81,12 @@ function Login() {
        });
        
        // Navigate to the success page or another route
-       navigate('/', { state: { responseData, formData } }); // Will navigate to home after a successful completiom
- 
+       if(responseData.role === "admin"){
+        navigate('/Admin', {state: {responseData, formData} });
+       }
+       else if(responseData.role === "user"){
+        navigate('/volunteer', {state: {responseData, formData}})
+       }
      } catch (error) {
        console.error('Error in handleSubmit:', error.message);
      }

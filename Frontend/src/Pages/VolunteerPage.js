@@ -4,6 +4,7 @@ import volunteerMatchImage from '../volunimg2.png';
 import graduation from '../graduation.png';
 import disaster from '../flooded-house.png';
 import healthcare from '../healthcare.png';
+import { Link } from 'react-router-dom';
 
 
 const VolunteerPage = () => {
@@ -76,17 +77,23 @@ const VolunteerPage = () => {
         <div className="category-cards">
           <div className="cards">
           <img src={graduation} alt="Education Icon" />
+          <Link to="/Volunteers">
             <h3>Education</h3>
+          </Link>
             <p>Empower the next generation by volunteering in educational programs.</p>
           </div>
           <div className="cards">
           <img src={healthcare} alt="Healthcare Icon" />
+          <Link to="/Volunteers">
             <h3>Health</h3>
+          </Link>
             <p>Contribute to health and wellness initiatives in your community.</p>
           </div>
           <div className="cards">
           <img src={disaster} alt="Disaster relief icon" />
+          <Link to="/Volunteers">
             <h3>Disaster Relief</h3>
+          </Link>
             <p>Provide support and relief during emergencies and natural disasters.</p>
           </div>
         </div>

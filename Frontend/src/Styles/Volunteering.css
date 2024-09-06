@@ -1,0 +1,121 @@
+/* General Container Styles */
+.volunteers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Moderustic', sans-serif;
+}
+
+.volunteers-title {
+    font-weight: bold;
+    font-size: 2.6rem;
+    color: #f5a623;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Filters Section */
+.volunteers-filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.filter-input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.clear-filters-button {
+    color: white;
+    background-color: #0077C8;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+/* Volunteers Grid */
+.volunteers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted min-width to make boxes wider */
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.volunteer-card {
+    display: flex;
+    justify-content: center;
+}
+
+.volunteer-card-content {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 1.5rem; /* Increased padding for wider content */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 18rem; /* Increased the width from 16rem to 18rem */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteer-card-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.volunteer-image {
+    height: 14rem; /* Increased image height */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.volunteer-details {
+    padding: 1rem;
+    text-align: center;
+}
+
+.volunteer-name {
+    font-size: 1.6rem; /* Slightly larger font */
+    color: #f5a623;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.volunteer-place, .volunteer-date, .volunteer-category {
+    color: #0077C8;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Hover effects for volunteer card */
+.volunteer-card:hover .volunteer-image {
+    border: 2px solid #f5a623;
+}
+
+/* Ensure consistency with homepage colors */
+body {
+    font-family: 'Moderustic', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

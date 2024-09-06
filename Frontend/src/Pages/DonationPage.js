@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Styles/Donation.css";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const DonationPage = () => {
   const [donationAmount, setDonationAmount] = useState("");
@@ -14,6 +15,8 @@ const DonationPage = () => {
   });
   const [successMessage, setSuccessMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleDonationAmountChange = (amount) => {
     setDonationAmount(amount);
   };
@@ -26,9 +29,41 @@ const DonationPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async(e) => {
+    e.preventDefault();//prevent the form from submitting without the required parts being filled out
+
     console.log("Donation Submitted:", donorInfo, "Amount:", donationAmount);
+
+  //establishing of the post request to send data to DB enpoint
+
+  try{
+    const response = await fetch(`https://capstone2-bofa-backend.vercel.app/Donation`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', //stating the content that will be pushed will be in JSON format 
+      },
+      body: JSON.stringify(donorInfo)
+    });
+
+    if(!response.ok){
+      //will log error along with HTTP status code to allow for debugging
+      const errorText = await response.text();
+      console.error(`HTTP error! Status: ${response.status}, Text: ${errorText}`);
+      throw new Error(`Failed to submit form data: ${response.status}`);
+    }
+    
+    const responseData = await response.json() //storing the response from the post request in variable
+
+    console.log('Response Data:', responseData) //conosle log the response data to see what is being sent
+
+
+    //reset the form data after the form has been compoleted and information has been posted
+
+    setSuccessMessage("Thank you for your donation!");
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 5000);
+
     setDonationAmount("");
     setDonorInfo({
       firstName: "",
@@ -39,11 +74,13 @@ const DonationPage = () => {
       paymentMethod: "Credit Card",
       comments: "",
     });
-    setSuccessMessage("Thank you for your donation!");
-    setTimeout(() => {
-      setSuccessMessage("");
-    }, 5000);
-  };
+
+
+    // navigate('/') ///navigate to home page after succesful completion
+  }catch (error) {
+    console.error('Error in handleSubmit:', error.message);
+  }
+};
 
   return (
     <div className="donation-page-container">
@@ -141,10 +178,9 @@ const DonationPage = () => {
             onChange={handleInputChange}
             required
           >
-            <option value="General Fund">General Fund</option>
-            <option value="Memorial Gift">Memorial Gift</option>
-            <option value="Honorarium">Honorarium</option>
-            <option value="Sponsorship">Sponsorship</option>
+            <option value="Education">Education</option>
+            <option value="Health">Health</option>
+            <option value="Disaster Relief">Disaster Relief</option>
           </select>
 
           <label htmlFor="company">Company (if applicable)</label>

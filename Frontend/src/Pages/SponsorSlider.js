@@ -1,6 +1,6 @@
 // SponsorSlider.jsx
 import React from "react";
-import "../Styles/Home.css"; // Ensure the styles are correctly imported
+import "../Styles/Home.css"; 
 
 function SponsorSlider() {
   const sponsors = [
