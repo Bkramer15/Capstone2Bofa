@@ -1,7 +1,7 @@
 const mysql = require('mysql2'); // MySQL library
 const cors = require('cors'); // CORS middleware
 const express = require('express'); // Express framework
-const bcrypt = require('bcrypt');// installed password hashing 
+const bcrypt = require('bcryptjs');// installed password hashing 
 
 
 const app = express();

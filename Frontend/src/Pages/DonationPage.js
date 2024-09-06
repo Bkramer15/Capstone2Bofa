@@ -37,7 +37,7 @@ const DonationPage = () => {
   //establishing of the post request to send data to DB enpoint
 
   try{
-    const response = await fetch(`http://localhost:8081/Donation`, {
+    const response = await fetch(`https://capstone2-bofa-backend.vercel.app/Donation`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', //stating the content that will be pushed will be in JSON format 
@@ -58,7 +58,12 @@ const DonationPage = () => {
 
 
     //reset the form data after the form has been compoleted and information has been posted
-      
+
+    setSuccessMessage("Thank you for your donation!");
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 5000);
+
     setDonationAmount("");
     setDonorInfo({
       firstName: "",
@@ -70,12 +75,8 @@ const DonationPage = () => {
       comments: "",
     });
 
-    setSuccessMessage("Thank you for your donation!");
-    setTimeout(() => {
-      setSuccessMessage("");
-    }, 5000);
 
-    navigate('/') ///navigate to home page after succesful completion
+    // navigate('/') ///navigate to home page after succesful completion
   }catch (error) {
     console.error('Error in handleSubmit:', error.message);
   }
@@ -177,10 +178,9 @@ const DonationPage = () => {
             onChange={handleInputChange}
             required
           >
-            <option value="General Fund">General Fund</option>
-            <option value="Memorial Gift">Memorial Gift</option>
-            <option value="Honorarium">Honorarium</option>
-            <option value="Sponsorship">Sponsorship</option>
+            <option value="Education">Education</option>
+            <option value="Health">Health</option>
+            <option value="Disaster Relief">Disaster Relief</option>
           </select>
 
           <label htmlFor="company">Company (if applicable)</label>
