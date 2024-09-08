@@ -1,6 +1,6 @@
 # HandsOn Heroes Application
 
-![Logo](hohlogoo.png)
+![Logo](./Frontend/Images/hohlogooGit.png)
 
 HandsOn Heroes is a platform designed to connect volunteers, donors, and advocates with meaningful opportunities to make a difference. Whether it's in education, health, or disaster relief, the application provides a user-friendly interface for users to register, log in, donate, and volunteer.
 
