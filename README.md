@@ -7,8 +7,6 @@ HandsOn Heroes is a platform designed to connect volunteers, donors, and advocat
 
 ## Features
 
-This project will be a part of your final portfolio and should adhere to the following guidelines:
-
 - Maintain the functionality of the current platform, enabling users to donate, volunteer, and register.
 - Responsive design for mobile, tablet, and desktop devices.
 - Secure back end with Node.js and MySQL, including user authentication and donation tracking.
