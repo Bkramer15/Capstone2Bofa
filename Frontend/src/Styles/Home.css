@@ -114,7 +114,7 @@ header {
   gap: 20px;
 }
 
-.card {
+.categorycard {
   position: relative;
   width: 500px;
   height: 350px;
@@ -145,7 +145,7 @@ header {
   border-radius: 10px;
 }
 
-.card:hover .card-overlay {
+.categorycard:hover .card-overlay {
   opacity: 1;
 }
 

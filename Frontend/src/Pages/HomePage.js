@@ -25,7 +25,7 @@ function HeroSection() {
       <section className="section">
         <h2 className="section-title">Offering a Helping Hand...</h2>
         <div className="cards-container">
-          <div className="card">
+          <div className="categorycard">
             <Link to="/donation"> 
               <img src="https://www.unitedwayofyc.org/wp-content/uploads/united-way-of-york-county-give-1200x1200.jpg" alt="Fund the Cause" />
               <div className="card-overlay">
@@ -36,7 +36,7 @@ function HeroSection() {
               </div>
             </Link>
           </div>
-          <div className="card">
+          <div className="categorycard">
             <Link to="/Register"> 
               <img src="https://www.unitedwayofyc.org/wp-content/uploads/united-way-of-york-county-advocate-1200x1200.jpg" alt="Become an Ambassador" />
               <div className="card-overlay">
@@ -47,7 +47,7 @@ function HeroSection() {
               </div>
             </Link>
           </div>
-          <div className="card">
+          <div className="categorycard">
             <Link to="/volunteer"> 
               <img src="https://www.unitedwayofyc.org/wp-content/uploads/united-way-volunteers.jpg" alt="Opportunities to Help" />
               <div className="card-overlay">
