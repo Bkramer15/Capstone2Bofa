@@ -55,5 +55,3 @@ Start the development server:
 ### Live Demo
 
 https://capstone2-bofa-frontends.vercel.app/
-
-## Resources
