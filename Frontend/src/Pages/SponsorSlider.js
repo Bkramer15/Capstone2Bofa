@@ -14,7 +14,7 @@ function SponsorSlider() {
       name: "Beni Kiambote",
       profileUrl: "https://www.linkedin.com/in/beni-kiambote/",
       imgUrl:
-        "https://media.licdn.com/dms/image/v2/D5603AQGbQHAxHdbCSg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722828164939?e=1730332800&v=beta&t=5mdJqlLc5XZO5IVLrOdG6x7z__i_-0idFkABog98EYE",
+        "https://media.licdn.com/dms/image/v2/D4E03AQFtM4Ly6xZPww/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1725436889492?e=1730937600&v=beta&t=iHTaVvx8BUy6T4Z8T1MpOmwRBxlr_grGlkJ53PINvi0",
     },
     {
       name: "Jordan Sturdivant",
