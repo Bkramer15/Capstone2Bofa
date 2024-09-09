@@ -124,7 +124,8 @@ function Footer() {
               required
             />
             <label htmlFor="consent">
-              I consent to receive newsletters and promotional emails.
+              I consent to receive newsletters
+              <br /> and promotional emails.
             </label>
           </div>
           <button className="submit-button" type="submit" disabled={loading}>

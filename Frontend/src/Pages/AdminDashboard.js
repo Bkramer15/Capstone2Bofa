@@ -1,20 +1,49 @@
-import React, { useState, useEffect } from "react"; //initialize react, useEffect and useState from react library
-import { FaSearch, FaCog } from "react-icons/fa";
-import { Chart } from "react-google-charts"; //importing chart from react googel charts to allow for creation of charts based on data
+import React, { useState, useEffect } from "react";
+import { Chart } from "react-google-charts";
 import "../Styles/Admin.css";
 // import chart  from "../2024.png";
-import circle  from "../circlegraph.png";
-import line  from "../linegraph.png";
-import john  from "../johndoe.png";
-import donation  from "../donationgraph.png";
+import circle from "../circlegraph.png";
+import line from "../linegraph.png";
+import john from "../johndoe.png";
+import donation from "../donationgraph.png";
 
 // Sample Volunteer Data
 const invoices = [
-  { id: "#065499", customer: "Aurélien Salomon", date: "04 Sep 2020", cause: "Education", amount: "$100"},
-  { id: "#005455", customer: "Manuel Rovira", date: "09 Sep 2020", cause: "Health", amount: "$250" },
-  { id: "#003904", customer: "Lebron James", date: "21 Jan 2021", cause: "Disaster", amount: "$100" },
-  { id: "#092933", customer: "Carl Robins", date: "06 Mar 2021", cause: "Health", amount: "$10" },
-  { id: "#009475", customer: "John Doe", date: "16 Apr 2022", cause: "Disaster", amount: "$5000" },
+  {
+    id: "#065499",
+    customer: "Aurélien Salomon",
+    date: "04 Sep 2020",
+    cause: "Education",
+    amount: "$100",
+  },
+  {
+    id: "#005455",
+    customer: "Manuel Rovira",
+    date: "09 Sep 2020",
+    cause: "Health",
+    amount: "$250",
+  },
+  {
+    id: "#003904",
+    customer: "Lebron James",
+    date: "21 Jan 2021",
+    cause: "Disaster",
+    amount: "$100",
+  },
+  {
+    id: "#092933",
+    customer: "Carl Robins",
+    date: "06 Mar 2021",
+    cause: "Health",
+    amount: "$10",
+  },
+  {
+    id: "#009475",
+    customer: "John Doe",
+    date: "16 Apr 2022",
+    cause: "Disaster",
+    amount: "$5000",
+  },
 ];
 
 function AdminDashboard() {
@@ -29,17 +58,17 @@ function AdminDashboard() {
   // Function to fetch user data from the server
   const fetchVolunteers = () => {
     fetch(`https://capstone2-bofa-backend.vercel.app/login`)
-      .then(res => {
+      .then((res) => {
         if (!res.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return res.json();
       })
-      .then(data => {
+      .then((data) => {
         setVolunteers(data); // Update state with the fetched data
       })
-      .catch(error => {
-        console.error('Fetch error:', error);
+      .catch((error) => {
+        console.error("Fetch error:", error);
       });
   };
 
@@ -51,17 +80,16 @@ function AdminDashboard() {
           <h3>Total Volunteers</h3>
           <div className="total-sales">
             {/* <img src={chart} alt="Total Volunteers chart" className="chart"/> */}
-            
           </div>
 
           <div className="overview-cards">
             <div className="card">
               <h3>Hours Volunteered</h3>
-              <img src={circle} alt="circle graph" className="circle"/>
+              <img src={circle} alt="circle graph" className="circle" />
             </div>
             <div className="card">
               <h3>Visitors This Week</h3>
-              <img src={line} alt="line graph" className="linegraph"/>
+              <img src={line} alt="line graph" className="linegraph" />
             </div>
             <div className="card">
               <h3>Events Attended</h3>
@@ -71,7 +99,7 @@ function AdminDashboard() {
             </div>
             <div className="card">
               <h3>Donation of the Month</h3>
-              <img src={john} alt="Donation of the month" className="john"/>
+              <img src={john} alt="Donation of the month" className="john" />
             </div>
           </div>
         </div>
