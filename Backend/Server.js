@@ -61,7 +61,15 @@ const dbDonation  = mysql.createConnection({
 
 
 //create mySQL connection for the newsletter
-
+// const dbNewsletter = mysql.createConnection({
+//   host: 'my-donation-db.cjm6ce8cikky.us-east-1.rds.amazonaws.com',
+//   user:'admin',
+//   password:'qBDiSihbNAICSeX0RR8P',
+//   database: 'Newsletter',
+//   waitForConnection: 10,
+//   connectionLimit: 10,
+//   port: 3306
+// })
 
 
 
@@ -92,6 +100,15 @@ dbDonation.connect((err) => {
   }
 })
 
+
+// //Test the DB connection for Newsletter Donations
+// dbNewsletter.conect((err) => {
+//   if(err){
+//     console.error("Error connection to Newsletter database:", err)
+//   }else{
+//     console.log("Connected to the Newsletter database");  
+//   }
+// })
 
 
 // User registration
@@ -166,6 +183,31 @@ app.post('/Donation', (req,res) => {
 })
 
 
+//Writiing a post request for Newsletter page to store informatiion in DB
+app.post("/subscribe", (req, res) => {
+  const email = req.body.email;
+
+  if (!email) {
+    return res
+      .status(400)
+      .send({ error: true, message: "Please provide an email" });
+  }
+
+  db.query(
+    "INSERT INTO newsletter_subscribers (email) VALUES (?)",
+    [email],
+    (err, result) => {
+      if (err) {
+        console.error("Failed to insert email: " + err.stack);
+        return res
+          .status(500)
+          .send({ error: true, message: "Database query failed" });
+      }
+      res.send({ error: false, message: "Subscription successful" });
+    }
+  );
+});
+
 // Beginning test route to make sure that port is working
 app.get('/', (req, res) => {
     res.json('Welcome to the backend');
@@ -211,6 +253,17 @@ app.get('/Donation', (req, res) => {
       return res.status(500).send("Error retrieving data");
     }
     res.json(results)
+  })
+})
+
+
+//get request for Newsletter endpoint
+app.get('/subscribe', (req,res) => {
+  dbNewsletter.query('SELECT * FROM Newsletter', (err, results) => {
+    if(err){
+      return res.status(500).send('Error retrieving data');
+    }
+    res.json(results);
   })
 })
 
