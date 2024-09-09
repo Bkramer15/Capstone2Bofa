@@ -54,7 +54,7 @@ function Login() {
      console.log("Hello"); //test console log
 
      try {
-       const response = await fetch('https://capstone2-bofa-backend.vercel.app/login', { // will send data to the login endpoint
+       const response = await fetch('http://localhost:8081/login', { // will send data to the login endpoint
          method: 'POST', //establishing it is a POST request
          headers: {
            'Content-Type': 'application/json', //stating the content that will be pushed will be in JSON
@@ -204,13 +204,16 @@ function Login() {
             </div>
           </div>
         </div>
-        <div className="flex-1 bg-indigo-100 text-center hidden lg:flex">
-          <div
-            className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-            style={{
+        <div className="flex-1 bg-indigo-100 bg- text-center hidden lg:flex bg-cover bg-center bg-no-repeat" style={{
               backgroundImage:
-                "url('')", //this will be changed once we find the correct image
-            }}
+                "url('https://st2.depositphotos.com/1518767/7634/i/450/depositphotos_76340099-stock-photo-happy-volunteer-family-putting-their.jpg')", //this will be changed once we find the correct image
+            }}>
+          <div
+            className="m-12 xl:m-16 w-full bg-cover bg-center bg-no-repeat"
+            // style={{
+            //   backgroundImage:
+            //     "url('https://st2.depositphotos.com/1518767/7634/i/450/depositphotos_76340099-stock-photo-happy-volunteer-family-putting-their.jpg')", //this will be changed once we find the correct image
+            // }}
           />
         </div>
       </div>

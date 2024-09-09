@@ -37,7 +37,7 @@ const DonationPage = () => {
   //establishing of the post request to send data to DB enpoint
 
   try{
-    const response = await fetch(`https://capstone2-bofa-backend.vercel.app/Donation`, {
+    const response = await fetch(`http://localhost:8081/Donation`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', //stating the content that will be pushed will be in JSON format 
