@@ -19,7 +19,7 @@ function Footer() {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3001/subscribe", {
+      const response = await axios.post("http://localhost:8081/subscribe", {
         firstName,
         lastName,
         email,
@@ -124,7 +124,8 @@ function Footer() {
               required
             />
             <label htmlFor="consent">
-              I consent to receive newsletters and promotional emails.
+              I consent to receive newsletters
+              <br /> and promotional emails.
             </label>
           </div>
           <button className="submit-button" type="submit" disabled={loading}>

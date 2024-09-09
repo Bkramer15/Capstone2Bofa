@@ -204,13 +204,16 @@ function Login() {
             </div>
           </div>
         </div>
-        <div className="flex-1 bg-indigo-100 text-center hidden lg:flex">
-          <div
-            className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-            style={{
+        <div className="flex-1 bg-indigo-100 bg- text-center hidden lg:flex bg-cover bg-center bg-no-repeat" style={{
               backgroundImage:
-                "url('')", //this will be changed once we find the correct image
-            }}
+                "url('https://st2.depositphotos.com/1518767/7634/i/450/depositphotos_76340099-stock-photo-happy-volunteer-family-putting-their.jpg')", //this will be changed once we find the correct image
+            }}>
+          <div
+            className="m-12 xl:m-16 w-full bg-cover bg-center bg-no-repeat"
+            // style={{
+            //   backgroundImage:
+            //     "url('https://st2.depositphotos.com/1518767/7634/i/450/depositphotos_76340099-stock-photo-happy-volunteer-family-putting-their.jpg')", //this will be changed once we find the correct image
+            // }}
           />
         </div>
       </div>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap");
+
 .contact-page {
   margin: 0 auto;
   font-family: "Arial", sans-serif;
@@ -165,6 +166,8 @@
   color: #539ed0;
 }
 
+/* Responsive Styling */
+
 @media (max-width: 768px) {
   .contact-sections {
     flex-direction: column;
@@ -201,6 +204,10 @@
 
   .contact-hero-overlay p {
     font-size: 1rem;
+  }
+
+  .contact-form .form-group.consent-group .consent-text {
+    font-size: 0.85rem;
   }
 
   .submit-button {
@@ -241,5 +248,15 @@
 
   .contact-hero-overlay p {
     font-size: 0.9rem;
+  }
+
+  .contact-form .form-group.consent-group .consent-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 870px) {
+  .consent-text {
+    display: none;
   }
 }

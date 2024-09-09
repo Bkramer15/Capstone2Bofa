@@ -240,13 +240,15 @@ function Register() {
             </div>
           </div>
         </div>
-        <div className="flex-1 bg-indigo-100 text-center hidden lg:flex">
+        <div className="flex-1 bg-indigo-100 text-center hidden lg:flex bg-cover bg-center bg-no-repeat" style={{
+              backgroundImage:
+                "url('https://cdnsm5-ss18.sharpschool.com/UserFiles/Servers/Server_27829776/Image/Parents/Volunteering/Volunteer-Image.jpg')", //this will be changed once we find the correct image
+            }}>
           <div
-            className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
+            className="m-12 xl:m-16 w-full bg-cover bg-center bg-no-repeat"
             // style={{
             //   backgroundImage:
-            //     url('https://files.slack.com/files-tmb/T5VCY49B3-F07KBS0KLQP-b9d97ad0f7/volun2_720.jpg') //this will be changed once we find the correct image
-                
+            //     "url('https://cdnsm5-ss18.sharpschool.com/UserFiles/Servers/Server_27829776/Image/Parents/Volunteering/Volunteer-Image.jpg')", //this will be changed once we find the correct image
             // }}
           />
         </div>
