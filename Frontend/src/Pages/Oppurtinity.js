@@ -13,7 +13,7 @@ function Volunteers({ volunteersEndpoint }) {
     }, [volunteersEndpoint]);
 
     const fetchVolunteers = () => {
-        fetch(`https://vercel.com/birhanu-kramers-projects/capstone2-bofa-backend/Volunteering`)
+        fetch(`https://capstone2-bofa-backend.vercel.app/Volunteering`)
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
