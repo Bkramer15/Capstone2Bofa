@@ -76,25 +76,25 @@ const VolunteerPage = () => {
         <h2>Explore by Category</h2>
         <div className="category-cards">
           <div className="cards">
+          <Link to="/Volunteers">
           <img src={graduation} alt="Education Icon" />
-          <Link to="/Volunteers">
             <h3>Education</h3>
-          </Link>
             <p>Empower the next generation by volunteering in educational programs.</p>
+            </Link>
           </div>
           <div className="cards">
+          <Link to="/Volunteers">
           <img src={healthcare} alt="Healthcare Icon" />
-          <Link to="/Volunteers">
             <h3>Health</h3>
-          </Link>
             <p>Contribute to health and wellness initiatives in your community.</p>
+            </Link>
           </div>
           <div className="cards">
-          <img src={disaster} alt="Disaster relief icon" />
           <Link to="/Volunteers">
+          <img src={disaster} alt="Disaster relief icon" />
             <h3>Disaster Relief</h3>
-          </Link>
             <p>Provide support and relief during emergencies and natural disasters.</p>
+            </Link>
           </div>
         </div>
       </section>
