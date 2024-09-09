@@ -163,7 +163,7 @@ function Register() {
                     <input
                       className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="text"
-                      name="FirstName"
+                      name="firstName"
                       placeholder="First Name"
                       value={formData.firstName}
                       onChange={handleChange}
@@ -175,7 +175,7 @@ function Register() {
                     <input
                       className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="text"
-                      name="LastName"
+                      name="lastName"
                       placeholder="Last Name"
                       value={formData.lastName}
                       onChange={handleChange}
