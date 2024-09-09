@@ -62,6 +62,7 @@ function Volunteers({ volunteersEndpoint }) {
                         value={filterName} 
                         onChange={e => setFilterName(e.target.value)} 
                         className="filter-input" 
+                        PlaceHolder="Search by keyword.... "
                     />
                 </div>
                 <div className="filter-item">

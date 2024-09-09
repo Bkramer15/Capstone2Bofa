@@ -163,8 +163,8 @@ function Register() {
                     <input
                       className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="text"
-                      name="firstName"
-                      placeholder="first name"
+                      name="FirstName"
+                      placeholder="First Name"
                       value={formData.firstName}
                       onChange={handleChange}
                     />
@@ -175,8 +175,8 @@ function Register() {
                     <input
                       className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="text"
-                      name="lastName"
-                      placeholder="last name"
+                      name="LastName"
+                      placeholder="Last Name"
                       value={formData.lastName}
                       onChange={handleChange}
                     />
@@ -223,12 +223,12 @@ function Register() {
                       <circle cx="8.5" cy="7" r="4" />
                       <path d="M20 8v6M23 11h-6" />
                     </svg>
-                    <span className="ml-3">Sign In</span>
+                    <span className="ml-3">Sign Up</span>
                   </button>
                 </div>
               </form>
               <p className="mt-6 text-xs text-gray-600 text-center">
-                I agree to abide by templatana's{' '}
+                I agree to abide by Hand On Hereos{' '}
                 <a href="#" className="border-b border-gray-500 border-dotted">
                   Terms of Service
                 </a>{' '}
