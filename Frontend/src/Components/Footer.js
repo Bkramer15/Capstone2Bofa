@@ -19,7 +19,7 @@ function Footer() {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3001/subscribe", {
+      const response = await axios.post("http://localhost:8081/subscribe", {
         firstName,
         lastName,
         email,
