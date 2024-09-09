@@ -54,7 +54,7 @@ function Login() {
      console.log("Hello"); //test console log
 
      try {
-       const response = await fetch('http://localhost:8081/login', { // will send data to the login endpoint
+       const response = await fetch('https://vercel.com/birhanu-kramers-projects/capstone2-bofa-backend/login', { // will send data to the login endpoint
          method: 'POST', //establishing it is a POST request
          headers: {
            'Content-Type': 'application/json', //stating the content that will be pushed will be in JSON

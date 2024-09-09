@@ -66,7 +66,7 @@ function Register() {
       console.log('Form is valid. Submitting...', formData);
   
       try {
-        const response = await fetch('http://localhost:8081/Register', { // Ensure this URL matches your backend
+        const response = await fetch('https://vercel.com/birhanu-kramers-projects/capstone2-bofa-backend/Register', { // Ensure this URL matches your backend
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
