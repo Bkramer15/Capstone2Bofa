@@ -11,6 +11,7 @@ function Login() {
   const [formErrors, setFormErrors] = useState({
     email: '',
     password: '',
+    general: '' //this is a new error for general erros such as incorrect credentials
   });
 
 
@@ -29,6 +30,7 @@ function Login() {
     const errors = {
       email: '',
       password: '',
+      general:''
     };
 
     if (!formData.email) {
@@ -64,13 +66,20 @@ function Login() {
  
 
        if (!response.ok) {
-         // Log status and response text for debugging
-         const errorText = await response.text();
-         console.error(`HTTP error! Status: ${response.status}, Text: ${errorText}`);
-         throw new Error(`Failed to submit form data: ${response.status}`);
-       }
+        const errorText = await response.text();
+        let generalError = 'An error occurred. Please try again.';
+        if (response.status === 401) {
+          generalError = 'Invalid email or password';
+        }
+        setFormErrors(prevErrors => ({
+          ...prevErrors,
+          general: generalError
+        }));
+        throw new Error(`Failed to submit form data: ${response.status}`);
+      }
  
        const responseData = await response.json();
+
        
        console.log('Response Data:', responseData); // Log to check response structure
                
@@ -176,7 +185,9 @@ function Login() {
                     />
                     {formErrors.password && <p className="text-xs text-red-500 mt-1">{formErrors.password}</p>}
                   </div>
-                
+
+                  {formErrors.general && <p className="text-xs text-red-500 mt-2">{formErrors.general}</p>}
+
                   <button
                     type="submit"
                     className="mt-5 tracking-wide font-semibold bg-blue-400 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"

@@ -92,7 +92,7 @@ function Register() {
         });
         
         // Navigate to the success page or another route
-        navigate('/', { state: { responseData, formData } }); // this will navigate to home after successful post
+        navigate('/Login', { state: { responseData, formData } }); // this will navigate to home after successful post
   
       } catch (error) {
         console.error('Error in handleSubmit:', error.message);
